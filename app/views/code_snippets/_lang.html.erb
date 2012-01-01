@@ -1,23 +1,28 @@
+<% langs = {
+	"actionscript" => "Actionscript",
+	"applescript" => "Applescript",
+	"bash" => "bash",
+	"c" => "C",
+	"cpp" => "C++",
+	"csharp" => "C#",
+	"css" => "CSS",
+	"diff" => "Diff",
+	"erlang" => "Erlang",
+	"html" => "HTML",
+	"java" => "Java",
+	"js" => "Javascript",
+	"make" => "Make",
+	"objective-c" => "Objective-C",
+	"perl" => "Perl",
+	"php" => "PHP",
+	"python" => "Python",
+	"ruby" => "Ruby",
+	"sql" => "SQL",
+	"xml" => "XML",
+	"yaml" => "YAML"
+} %>
 <select id="code_snippet_lang" name="code_snippet[lang]">
-	<option value="actionscript">Actionscript</option>
-	<option value="applescript">Applescript</option>
-	<option value="bash">bash</option>
-	<option value="c">C</option>
-	<option value="cpp">C++</option>
-	<option value="csharp">C#</option>
-	<option value="css">CSS</option>
-	<option value="diff">Diff</option>
-	<option value="erlang">Erlang</option>
-	<option value="html">HTML</option>
-	<option value="java">Java</option>
-	<option value="js">Javascript</option>
-	<option value="make">Make</option>
-	<option value="objective-c">Obj-C</option>
-	<option value="perl">Perl</option>
-	<option value="php">PHP</option>
-	<option value="python">Python</option>
-	<option value="ruby">Ruby</option>
-	<option value="sql">SQL</option>
-	<option value="xml">XML</option>
-	<option value="yaml">YAML</option>
+	<% langs.each do |key, val| %>
+	<option value="<%= key %>" <%= 'selected=selected' if @code_snippet.lang.downcase.eql?(key) %>><%= val %></option>
+	<% end %>
 </select>
