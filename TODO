@@ -1,0 +1,2 @@
+Fix UserSessionsController#new problem
+Validates_presence_of :invite_code

@@ -1,0 +1,107 @@
+@import "reset";
+@import "fonts/goudy-bookletter-1911";
+//@import "omg-text";
+
+body {
+	/*background-image: url("/images/stashh.png"); */
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	font-family: "Goudy Bookletter 1911", "Courier Neue", Courier, serif;
+}
+
+p {
+	margin-bottom: 20px;
+	line-height: 1.5em;
+}
+
+a { color: #111111; }
+a:hover { color: invert(#111111); background-color: #111111; }
+
+#navigation {
+	float: right;
+	margin-right: 201px;
+	margin-top: 20px;
+	text-align: right;
+}
+
+#main_content {
+	background-color: #fff;
+	height: 100%;
+	width: 740px;
+	margin: 20px auto;
+	h2 { font-size: 44px; margin-bottom: 15px; }
+	footer { width: 100%; text-align: center; margin-top: 10px; }
+	.new { font-size: 16px; }
+	form { margin: 0 auto;
+		font-family: "Goudy Bookletter 1911", "Courier Neue", Courier, serif;
+		input[type="text"], input[type="password"] { font-size: 20px; }
+		textarea#code_snippet_code { font-family: "Monaco", monospace; }
+	}
+}
+
+#grid {
+	display: block;
+	float:left;
+	width: 740px;
+	.colour_holder {
+		margin: 20px;
+		float: left;
+		.colour { 
+			$shadow-color: #aaa;
+			display: block;
+			-moz-box-shadow: 0px 0px 4px $shadow-color;
+			-webkit-box-shadow: 0px 0px 4px $shadow-color;
+			box-shadow: 0px 0px 4px $shadow-color; 
+		}
+		.single { width: 700px; height: 700px; }
+		.multiple { width: 200px; height: 200px; }
+	}
+}
+
+#list {
+	width: 740px;
+	display: block;
+	.code_holder {
+		cursor: pointer;
+		opacity: 0.8;
+		padding: 15px;
+		font-size: 24px;
+		margin-bottom: 20px;
+		height: 85px;
+		div { display: inline-block; }
+		#left { 
+			width: 300px;
+			height: 86px; 
+			border-right: 1px solid #111111; 
+			.name { font-weight: bold; font-size: 32px; }
+			.lang { margin-top: 10px; }
+			.actions {
+				height: 40px;
+				margin: 0;
+				padding: 15px 5px 0px 20px;
+				a { height: 40px; width:40px; border: 0; margin: 0; padding: 0; opacity: 0.7; }
+				a:hover { opacity: 1; }
+			}
+		}
+		#right { 
+			width: 400px; 
+			height: 66px; 
+			float: right; 
+			.code { background-color: rgba(255, 255, 255, 0.9); padding: 10px; height: 100%; width: 95%; word-wrap: break-word; font-family: "Monaco", "Courier Neue", Courier, serif; }
+		}
+	}
+	.code_holder:hover { opacity: 1; }
+}
+
+.lang { width: auto; padding: 10px; font-size: 26px; }
+.code_holder_large {
+	width: 740px;
+	padding: 15px 15px 20px 15px;
+	.name { width: 100%; padding: 10px 0px; font-size: 44px; }
+	.code { width: 96%; padding: 10px; margin:0; background-color: #fff; color: #000; word-wrap: break-word; font-family: "Monaco", "Courier Neue", Courier, serif; }
+}
+
+// Include sub-files
+@import "notices";
+@import "langs";

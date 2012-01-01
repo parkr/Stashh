@@ -1,0 +1,13 @@
+<h2><%= "#{@current_user.login}" %>/<%= link_to "code", "/code" %>/<%= @code_snippet.id %></h2>
+
+<p id="notice"><%= notice %></p>
+<div class="lang <%= @code_snippet.lang.downcase %>_text"><%= @code_snippet.lang %></div>
+<div class="code_holder_large <%= @code_snippet.lang.downcase %>">
+	<div class="name">
+		<%= @code_snippet.name %>
+	</div>
+	<pre class="code"><%= highlight(@code_snippet.code, @code_snippet.lang.downcase) -%></pre>
+</div>
+
+<%= link_to 'Edit', edit_code_snippet_path(@code_snippet) %> |
+<%= link_to 'Back', code_snippets_path %>

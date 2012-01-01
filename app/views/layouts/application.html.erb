@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stashh</title>
+  <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
+  <%= stylesheet_link_tag 'print.css', :media => 'print' %>
+  <!--[if IE]>
+  <%= stylesheet_link_tag 'ie.css', :media => 'screen, projection' %>
+  <![endif]-->
+  <%= javascript_include_tag :application %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	
+	<div id="navigation">
+		<%= render :partial => "layouts/nav" %>
+	</div>
+
+	<div id="main_content">
+		<%= yield %>
+		<footer>
+				<%= link_to "Home", "/" %>
+				<%= link_to "About", "/about" %>
+				<%= link_to "Privacy", "/privacy" %>
+				<%= link_to "Account", "/account" %>
+		</footer>
+	</div>
+</body>
+</html>

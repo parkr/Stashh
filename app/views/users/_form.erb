@@ -1,0 +1,22 @@
+<%= form_for user, :url => form_redirect_path do |form| %>
+	<p>
+		<%= form.label :email %><br />
+		<%= form.text_field :email %>
+	</p>
+	<p>
+		<%= form.label :login, "Username" %><br />
+		<%= form.text_field :login %>
+	</p>
+	<p>
+		<%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
+		<%= form.password_field :password %>
+	</p>
+	<p>
+		<%= form.label :password_confirmation %><br />
+		<%= form.password_field :password_confirmation %>
+	</p>
+	
+	<p>
+		<%= form.submit submit_text %>
+	</p>
+<% end %>

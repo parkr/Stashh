@@ -1,0 +1,27 @@
+<h1>Listing fonts</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Photo</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fonts.each do |font| %>
+  <tr>
+    <td><%= font.url %></td>
+    <td><%= font.photo %></td>
+    <td><%= font.name %></td>
+    <td><%= link_to 'Show', font %></td>
+    <td><%= link_to 'Edit', edit_font_path(font) %></td>
+    <td><%= link_to 'Destroy', font, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Font', new_font_path %>

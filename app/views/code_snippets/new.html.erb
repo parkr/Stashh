@@ -1,0 +1,5 @@
+<h2><%= "#{@current_user.login}" %>/<%= link_to "code", "/code" %>/new</h2>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', code_snippets_path %>

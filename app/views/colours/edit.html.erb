@@ -1,0 +1,6 @@
+<h2><%= "#{@current_user.login}" %>/<%= link_to "colours", "/colours" %>/<%= @colour.hex %></h2>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @colour %> |
+<%= link_to 'Back', colours_path %>

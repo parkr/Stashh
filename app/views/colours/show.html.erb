@@ -1,0 +1,23 @@
+<h2><%= "#{@current_user.login}" %>/<%= link_to "colours", "/colours" %>/<%= @colour.hex %></h2>
+
+<p id="notice"><%= notice %></p>
+
+<div id="grid">
+	<div class="colour_holder">
+		<div class="colour single" style="background-color: <%= @colour.hex %>;">&nbsp;</div>
+	</div>
+</div>
+
+<p>
+  <b>Hex:</b>
+  <%= @colour.hex %>
+</p>
+
+<p>
+  <b>Rgba:</b>
+  (<%= @colour.red %>, <%= @colour.green %>, <%= @colour.blue %>)
+</p>
+
+
+<%= link_to 'Edit', edit_colour_path(@colour) %> |
+<%= link_to 'Back', colours_path %>

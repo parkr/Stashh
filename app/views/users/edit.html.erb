@@ -1,0 +1,6 @@
+<h2><%= @user.login %>/account</h2>
+
+<%= error_messages_for :user %>
+<%= render :partial => 'users/form', :locals => { :user => @user, :submit_text => "Update", :form_redirect_path => account_path } %>
+
+<br /><%= link_to "My Profile", account_path %>

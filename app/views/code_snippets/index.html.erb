@@ -1,0 +1,20 @@
+<h2><%= "#{@current_user.login}" %>/code <span class="new"><%= link_to "new", new_code_snippet_path %></span></h2>
+
+<div id="list">
+<% @code_snippets.each do |code_snippet| %>
+	<div class="code_holder <%= code_snippet.lang.downcase %>">
+		<div id="left">
+			<div class="name"><%= truncate(code_snippet.name, :length => 18, :omission => "...") %></div><br />
+			<div class="lang"><%= code_snippet.lang %></div>
+			<div class="actions">
+				<%= link_to "Show", code_snippet %>
+	    		<%= link_to "Edit", edit_code_snippet_path(code_snippet) %>
+	    		<%= link_to "Destroy", code_snippet, :confirm => 'Are you sure?', :method => :delete %>
+			</div>
+		</div>
+		<div id="right">
+			<div class="code"><%= truncate(code_snippet.code, :length => 68, :omissiong => "...") %></div>
+		</div>
+	</div>
+<% end %>
+</div>

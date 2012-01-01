@@ -1,0 +1,11 @@
+<% if @current_user.nil? %>
+		<%= link_to_if(@current_user.nil?, "Login", "/login") %>
+<% end %>
+
+<% if !@current_user.nil? %>
+	<%= link_to_unless_current("Colours", { :controller => "colours", :action => "index" }) %> &bull;
+	<%= link_to_unless_current("Code Snippets", { :controller => "code_snippets", :action => "index" }) %> &bull; 
+	<%= link_to_unless_current("Fonts", { :controller => "fonts", :action => "index" }) %> &bull;
+	<%= link_to_unless_current("Links", { :controller => "links", :action => "index" }) %> &bull; 
+	<%= link_to("Logout", "/logout") %>
+<% end %>

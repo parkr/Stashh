@@ -1,0 +1,15 @@
+<h2><%= "#{@current_user.login}" %>/colours <span class="new"><%= link_to "new", new_colour_path %></span></h2>
+
+<div id="grid">
+
+<% @colours.each do |colour| %>
+	<div class="colour_holder">
+		<div class="colour multiple" style="background-color: <%= colour.hex %>;">&nbsp;</div>
+    	<%= colour.hex %> &bull; (<%= colour.red %>, <%= colour.green %>, <%= colour.blue %>)<br>
+		<td><%= link_to 'Show', colour %></td>
+		<td><%= link_to 'Edit', edit_colour_path(colour) %></td>
+		<td><%= link_to 'Destroy', colour, :confirm => 'Are you sure?', :method => :delete %></td>
+  	</div>
+<% end %>
+
+</div>

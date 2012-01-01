@@ -1,0 +1,4 @@
+<h2>/register</h2>
+
+<%= error_messages_for :user %>
+<%= render :partial => 'users/form', :locals => { :user => @user, :submit_text => "Register", :form_redirect_path => root_url } %>
